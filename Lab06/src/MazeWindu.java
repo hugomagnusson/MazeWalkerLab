@@ -9,13 +9,13 @@ public class MazeWindu {
 	private Turtle turtleeee;
 	private MazeRunner mofarah;
 	private Scanner scar;
-	private static MazeWindu jediMaster;
+	private static MazeWindu jedi;
 	private SimpleWindow botadeJesusAndraDjurOckså;
 
 	public static void main(String[] args) {
 		
-		jediMaster = new MazeWindu();
-		jediMaster.hakunamatata();
+		jedi = new MazeWindu();
+		jedi.hakunamatata();
 
 	}
 
@@ -24,14 +24,24 @@ public class MazeWindu {
 		
 		if (görAttManBlirGlaaaad){
 			
+		botadeJesusAndraDjurOckså = new SimpleWindow(500, 500, "aMazeing");
+		
 		scar = new Scanner(System.in);
 		int mazeNr = scar.nextInt();
 		
 		mufasa = new Maze(mazeNr);
 		
+		mufasa.draw(botadeJesusAndraDjurOckså);
+		
 		turtleeee = new Turtle(botadeJesusAndraDjurOckså, mufasa.getXEntry(), mufasa.getYEntry());
+		
+		MazeRunner runner = new MazeRunner(turtleeee, mazeNr);
+		
+		runner.walk(mufasa, botadeJesusAndraDjurOckså);
 		
 		}
 	}
+	
+	
 
 }
